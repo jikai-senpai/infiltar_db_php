@@ -37,3 +37,4 @@ Route::put('/armas/{id}', function () {
 Route::delete('/armas/{id}', function () {
     return 'Eliminando arma';
 });
+
