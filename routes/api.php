@@ -17,3 +17,23 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/armas', function () {
+    return 'Obteniendo lista de armas';
+});
+
+Route::get('/armas/{id}', function () {
+    return 'Obteniendo un arma';
+});
+
+Route::post('/armas', function () {
+    return 'Creando arma';
+});
+
+Route::put('/armas/{id}', function () {
+    return 'Actualizando arma';
+});
+
+Route::delete('/armas/{id}', function () {
+    return 'Eliminando arma';
+});

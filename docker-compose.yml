@@ -13,6 +13,7 @@ services:
         volumes:
             - ./db_data_mysql:/var/lib/mysql
             - ./docs/query/query-init:/docker-entrypoint-initdb.d  # Montar el directorio con el script SQL
+            - ./docs/query/query-users:/docker-entrypoint-initdb.d
         restart: always
         networks:
             - my_network
