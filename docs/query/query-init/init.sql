@@ -11,4 +11,3 @@ CREATE TABLE IF NOT EXISTS `armas`
     `condicion`          enum('nuevo', 'usado') NOT NULL,
     PRIMARY KEY (`id`)
 );
-
