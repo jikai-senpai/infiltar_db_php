@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\armaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/armas', function () {
-    return 'Obteniendo lista de armas';
-});
+Route::get('/armas', [armaController::class, 'index']);
 
 Route::get('/armas/{id}', function () {
     return 'Obteniendo un arma';
