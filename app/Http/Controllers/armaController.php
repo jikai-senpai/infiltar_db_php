@@ -13,8 +13,8 @@ class armaController extends Controller
 
         if ($armas->isEmpty()) {
             $data = [
-                'mensaje' => 'No se encontraron armas',
-                'error' => true
+                'message' => 'No se encontraron armas',
+                'status' => 200
             ];
             return response()->json($data, 404);
         }
