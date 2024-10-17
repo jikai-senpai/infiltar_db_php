@@ -25,9 +25,7 @@ Route::get('/armas/{id}', function () {
     return 'Obteniendo un arma';
 });
 
-Route::post('/armas', function () {
-    return 'Creando arma';
-});
+Route::post('/armas', [armaController::class, 'store']);
 
 Route::put('/armas/{id}', function () {
     return 'Actualizando arma';
