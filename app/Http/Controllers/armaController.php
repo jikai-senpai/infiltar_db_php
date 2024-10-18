@@ -54,6 +54,7 @@ class armaController extends Controller
         } catch (\Exception $e) {
             $data = [
                 'message' => 'Error al crear el arma',
+                'errors' => $e->getMessage(),
                 'status' => 500
             ];
             return response()->json($data, 500);
