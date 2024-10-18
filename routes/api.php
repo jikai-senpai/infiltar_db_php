@@ -21,9 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/armas', [armaController::class, 'index']);
 
-Route::get('/armas/{id}', function () {
-    return 'Obteniendo un arma';
-});
+Route::get('/armas/{id}', [armaController::class, 'show']);
 
 Route::post('/armas', [armaController::class, 'store']);
 

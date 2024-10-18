@@ -60,4 +60,24 @@ class armaController extends Controller
             return response()->json($data, 500);
         }
     }
+
+    public function show($id)
+    {
+        $arma = Armas::find($id);
+
+        if (!$arma) {
+            $data = [
+                'message' => 'Arma no encontrada',
+                'status' => 404
+            ];
+            return response()->json($data, 404);
+        }
+
+        $data = [
+            'arma' => $arma,
+            'status' => 200
+        ];
+
+        return response()->json($data, 200);
+    }
 }
