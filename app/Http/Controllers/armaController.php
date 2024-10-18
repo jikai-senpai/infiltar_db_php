@@ -38,7 +38,7 @@ class armaController extends Controller
         }
 
         try {
-            $arma = Armas::create([
+            Armas::create([
                 'tipo' => $request->tipo,
                 'modelo' => $request->modelo,
                 'condicion' => $request->condicion,
