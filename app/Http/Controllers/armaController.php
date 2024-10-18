@@ -37,25 +37,26 @@ class armaController extends Controller
             return response()->json($data, 400);
         }
 
-        $arma = Armas::create([
-            'tipo' => $request->tipo,
-            'modelo' => $request->modelo,
-            'condicion' => $request->condicion,
-        ]);
+        try {
+            $arma = Armas::create([
+                'tipo' => $request->tipo,
+                'modelo' => $request->modelo,
+                'condicion' => $request->condicion,
+            ]);
 
-        if (!$arma) {
+            $data = [
+                'message' => 'Arma creada correctamente',
+                'status' => 201
+            ];
+
+            return response()->json($data, 201);
+
+        } catch (\Exception $e) {
             $data = [
                 'message' => 'Error al crear el arma',
                 'status' => 500
             ];
             return response()->json($data, 500);
         }
-
-        $data = [
-            'message' => 'Arma creada correctamente',
-            'status' => 201
-        ];
-
-        return response()->json($data, 201);
     }
 }
