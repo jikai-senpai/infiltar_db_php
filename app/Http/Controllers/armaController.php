@@ -23,8 +23,8 @@ class armaController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'tipo' => 'required',
-            'modelo' => 'required',
+            'tipo' => 'required|max:255',
+            'modelo' => 'required|max:255',
             'condicion' => 'required',
         ]);
 
