@@ -80,4 +80,34 @@ class armaController extends Controller
 
         return response()->json($data, 200);
     }
+
+    public function destroy($id)
+    {
+        $arma = Armas::find($id);
+
+        if (!$arma) {
+            $data = [
+                'message' => 'Arma no encontrada',
+                'status' => 404
+            ];
+            return response()->json($data, 404);
+        }
+
+        try {
+            $arma->delete();
+            $data = [
+                'message' => 'Arma eliminada correctamente',
+                'status' => 200
+            ];
+            return response()->json($data, 200);
+
+        } catch (\Exception $e) {
+            $data = [
+                'message' => 'Error al eliminar el arma',
+                'errors' => $e->getMessage(),
+                'status' => 500
+            ];
+            return response()->json($data, 500);
+        }
+    }
 }

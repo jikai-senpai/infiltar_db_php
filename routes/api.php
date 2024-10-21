@@ -29,7 +29,5 @@ Route::put('/armas/{id}', function () {
     return 'Actualizando arma';
 });
 
-Route::delete('/armas/{id}', function () {
-    return 'Eliminando arma';
-});
+Route::delete('/armas/{id}', [armaController::class, 'destroy']);
 
