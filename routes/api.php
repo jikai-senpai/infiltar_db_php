@@ -27,5 +27,7 @@ Route::post('/armas', [armaController::class, 'store']);
 
 Route::put('/armas/{id}', [armaController::class, 'update']);
 
+Route::patch('/armas/{id}', [armaController::class, 'updatePartial']);
+
 Route::delete('/armas/{id}', [armaController::class, 'destroy']);
 
