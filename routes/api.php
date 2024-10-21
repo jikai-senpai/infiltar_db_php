@@ -25,9 +25,7 @@ Route::get('/armas/{id}', [armaController::class, 'show']);
 
 Route::post('/armas', [armaController::class, 'store']);
 
-Route::put('/armas/{id}', function () {
-    return 'Actualizando arma';
-});
+Route::put('/armas/{id}', [armaController::class, 'update']);
 
 Route::delete('/armas/{id}', [armaController::class, 'destroy']);
 
